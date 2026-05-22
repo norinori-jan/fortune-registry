@@ -1,25 +1,65 @@
 ﻿{
-  "version": "1.0.0",
-  "method": "梅花心易・体用法",
-  "reading_rules": [
-    "体卦・用卦を先に確定する",
-    "五行の生剋で吉凶の骨格を決める",
-    "変爻がある場合は変卦も参照する",
-    "時間卦（時卦）は補助情報として使う",
-    "高亨四分類（base.json）で最終断占する"
-  ],
-  "wuxing_relations": {
-    "生": { "label": "相生", "effect": "吉・助力" },
-    "剋": { "label": "相剋", "effect": "凶・障害" },
-    "比": { "label": "比和", "effect": "中立・現状維持" }
+  "meta": {
+    "version": "1.0.0",
+    "description": "梅花心易専用プロンプト定義",
+    "inherits": "prompts/base.json",
+    "last_updated": "2026-05-23"
   },
-  "output_format": {
-    "sections": [
-      "【体卦・用卦】",
-      "【五行生剋】",
-      "【変卦（あれば）】",
-      "【結論・断占】",
-      "【時期】"
-    ]
+
+  "system_prompt_append": "【梅花心易 断占手順】\n以下の順序で卦を読み、鑑定文を構成すること。\n\n1. 体卦・用卦の確定\n   - 体卦：相談者（占う側）を表す卦\n   - 用卦：事柄・相手を表す卦\n   - 体卦が強ければ主体に力あり、弱ければ事態に押される\n\n2. 五行生剋の判定（最重要）\n   - 用が体を生ずる → 吉（助けられる）\n   - 体が用を生ずる → 消耗（与えすぎ）\n   - 体用比和（同五行）→ 均衡\n   - 用が体を剋する → 凶（制圧される）\n   - 体が用を剋する → 制御できる\n\n3. 月支・日支による旺衰の加味（必須）\n   - 月支が体卦の五行を生剋するか判定する\n   - 日支が用卦・変爻の五行を旺衰させるか判定する\n   - 旺相（月日支に生じられる）→ 力が増す\n   - 休囚死（月日支に剋される・無気）→ 力が弱まる\n\n4. 互卦・変卦の読み（あれば）\n   - 互卦：現在進行形の内在する力\n   - 変卦：変爻がある場合、事態の行方\n   - 変爻が体卦に有利か不利か明示する\n\n5. 高亨四分類で断ずる\n   - 吉：積極的に進めよ\n   - 凶：止まれ、引け\n   - 悔：今は苦しいが後に好転する（耐えよ）\n   - 吝：小さな難あり、慎重に進めよ",
+
+  "input_schema": {
+    "description": "梅花心易鑑定に必要な入力データ",
+    "required": [
+      "question",
+      "honke",
+      "goke",
+      "month_branch",
+      "day_branch",
+      "honke_element",
+      "goke_element"
+    ],
+    "optional": [
+      "changing_lines",
+      "hoke",
+      "henke",
+      "time_of_divination"
+    ],
+    "fields": {
+      "question":         { "type": "string", "description": "相談者の質問・テーマ" },
+      "honke":            { "type": "string", "description": "本卦名（例：乾、坤、震…）" },
+      "goke":             { "type": "string", "description": "互卦名" },
+      "month_branch":     { "type": "string", "description": "月支（例：子、丑、寅…）" },
+      "day_branch":       { "type": "string", "description": "日支（例：子、丑、寅…）" },
+      "honke_element":    { "type": "string", "description": "本卦の五行（木火土金水）" },
+      "goke_element":     { "type": "string", "description": "互卦の五行" },
+      "taikua":           { "type": "string", "description": "体卦名" },
+      "youkua":           { "type": "string", "description": "用卦名" },
+      "taikua_element":   { "type": "string", "description": "体卦の五行" },
+      "youkua_element":   { "type": "string", "description": "用卦の五行" },
+      "changing_lines":   { "type": "array",  "description": "変爻の爻位（例：[1,4]）" },
+      "henke":            { "type": "string", "description": "変卦名（変爻がある場合）" }
+    }
+  },
+
+  "prompt_template": "【梅花心易 鑑定依頼】\n\n相談テーマ：{{question}}\n\n本卦：{{honke}}（{{honke_element}}）\n互卦：{{goke}}（{{goke_element}}）\n体卦：{{taikua}}（{{taikua_element}}）\n用卦：{{youkua}}（{{youkua_element}}）\n月支：{{month_branch}}\n日支：{{day_branch}}\n変爻：{{changing_lines_text}}\n変卦：{{henke}}\n\n上記のデータをもとに、明朝透派の断占スタイルで鑑定してください。\n五行生剋・月日支旺衰・変爻の読みを必ず含め、高亨四分類で締めてください。",
+
+  "breakdown_labels": {
+    "taikua_strength": "体卦の強さ",
+    "youkua_strength": "用卦の強さ",
+    "seikoku":         "生剋関係",
+    "month_influence": "月支の影響",
+    "day_influence":   "日支の影響",
+    "henke_direction": "変化の方向"
+  },
+
+  "kikkyo_badges": {
+    "大吉": { "color": "#FFD700", "label": "大吉" },
+    "吉":   { "color": "#22c55e", "label": "吉" },
+    "中平": { "color": "#e5e7eb", "label": "中平" },
+    "凶":   { "color": "#f97316", "label": "凶" },
+    "大凶": { "color": "#ef4444", "label": "大凶" },
+    "悔":   { "color": "#a78bfa", "label": "悔" },
+    "吝":   { "color": "#fbbf24", "label": "吝" }
   }
 }

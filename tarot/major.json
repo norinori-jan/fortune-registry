@@ -1,0 +1,27 @@
+﻿{
+  "version": "1.0.0",
+  "cards": [
+    { "number": 0,  "name_ja": "愚者",       "name_en": "The Fool",           "element": "風",  "wuxing": "木", "category_default": "D" },
+    { "number": 1,  "name_ja": "魔術師",     "name_en": "The Magician",       "element": "水星","wuxing": "水", "category_default": "A" },
+    { "number": 2,  "name_ja": "女教皇",     "name_en": "The High Priestess", "element": "月",  "wuxing": "水", "category_default": "D" },
+    { "number": 3,  "name_ja": "女帝",       "name_en": "The Empress",        "element": "金星","wuxing": "土", "category_default": "A" },
+    { "number": 4,  "name_ja": "皇帝",       "name_en": "The Emperor",        "element": "牡羊","wuxing": "火", "category_default": "A" },
+    { "number": 5,  "name_ja": "教皇",       "name_en": "The Hierophant",     "element": "牡牛","wuxing": "土", "category_default": "B" },
+    { "number": 6,  "name_ja": "恋人",       "name_en": "The Lovers",         "element": "双子","wuxing": "木", "category_default": "B" },
+    { "number": 7,  "name_ja": "戦車",       "name_en": "The Chariot",        "element": "蟹",  "wuxing": "水", "category_default": "A" },
+    { "number": 8,  "name_ja": "力",         "name_en": "Strength",           "element": "獅子","wuxing": "火", "category_default": "A" },
+    { "number": 9,  "name_ja": "隠者",       "name_en": "The Hermit",         "element": "乙女","wuxing": "土", "category_default": "D" },
+    { "number": 10, "name_ja": "運命の輪",   "name_en": "Wheel of Fortune",   "element": "木星","wuxing": "木", "category_default": "A" },
+    { "number": 11, "name_ja": "正義",       "name_en": "Justice",            "element": "天秤","wuxing": "金", "category_default": "B" },
+    { "number": 12, "name_ja": "吊られた男", "name_en": "The Hanged Man",     "element": "海王","wuxing": "水", "category_default": "D" },
+    { "number": 13, "name_ja": "死神",       "name_en": "Death",              "element": "蠍",  "wuxing": "水", "category_default": "C" },
+    { "number": 14, "name_ja": "節制",       "name_en": "Temperance",         "element": "射手","wuxing": "火", "category_default": "B" },
+    { "number": 15, "name_ja": "悪魔",       "name_en": "The Devil",          "element": "土星","wuxing": "土", "category_default": "C" },
+    { "number": 16, "name_ja": "塔",         "name_en": "The Tower",          "element": "火星","wuxing": "火", "category_default": "C" },
+    { "number": 17, "name_ja": "星",         "name_en": "The Star",           "element": "水瓶","wuxing": "水", "category_default": "A" },
+    { "number": 18, "name_ja": "月",         "name_en": "The Moon",           "element": "魚",  "wuxing": "水", "category_default": "C" },
+    { "number": 19, "name_ja": "太陽",       "name_en": "The Sun",            "element": "太陽","wuxing": "火", "category_default": "A" },
+    { "number": 20, "name_ja": "審判",       "name_en": "Judgement",          "element": "冥王","wuxing": "火", "category_default": "A" },
+    { "number": 21, "name_ja": "世界",       "name_en": "The World",          "element": "土星","wuxing": "土", "category_default": "A" }
+  ]
+}

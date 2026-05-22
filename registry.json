@@ -1,0 +1,21 @@
+﻿{
+  "version": "1.0.0",
+  "updated": "2026-05-22",
+  "modules": {
+    "tarot": {
+      "major": "tarot/major.json",
+      "card_notes": "tarot/card_notes/",
+      "sessions": "tarot/sessions/"
+    },
+    "meihua": {
+      "hexagram_wuxing": "meihua/hexagram_wuxing.json"
+    },
+    "shichu": {},
+    "prompts": {
+      "base": "prompts/base.json",
+      "tarot": "prompts/tarot.json",
+      "meihua": "prompts/meihua.json",
+      "shichu": "prompts/shichu.json"
+    }
+  }
+}

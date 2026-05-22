@@ -1,0 +1,21 @@
+﻿{
+  "version": "1.0.0",
+  "trigrams": {
+    "乾": { "wuxing": "金", "direction": "西北", "number": 1, "image": "天" },
+    "兌": { "wuxing": "金", "direction": "西",   "number": 2, "image": "沢" },
+    "離": { "wuxing": "火", "direction": "南",   "number": 3, "image": "火" },
+    "震": { "wuxing": "木", "direction": "東",   "number": 4, "image": "雷" },
+    "巽": { "wuxing": "木", "direction": "東南", "number": 5, "image": "風" },
+    "坎": { "wuxing": "水", "direction": "北",   "number": 6, "image": "水" },
+    "艮": { "wuxing": "土", "direction": "東北", "number": 7, "image": "山" },
+    "坤": { "wuxing": "土", "direction": "西南", "number": 8, "image": "地" }
+  },
+  "wuxing_cycle": {
+    "生": {
+      "木→火": "吉", "火→土": "吉", "土→金": "吉", "金→水": "吉", "水→木": "吉"
+    },
+    "剋": {
+      "木→土": "凶", "土→水": "凶", "水→火": "凶", "火→金": "凶", "金→木": "凶"
+    }
+  }
+}

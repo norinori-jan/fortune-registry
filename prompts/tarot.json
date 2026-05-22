@@ -1,0 +1,28 @@
+﻿{
+  "version": "1.0.0",
+  "spread_default": "three_card",
+  "positions": {
+    "three_card": [
+      { "id": "past",    "label": "過去・原因" },
+      { "id": "present", "label": "現在・核心" },
+      { "id": "future",  "label": "未来・結論" }
+    ],
+    "one_card": [
+      { "id": "core", "label": "核心" }
+    ]
+  },
+  "reading_rules": [
+    "正位・逆位を必ず明示する",
+    "カード単体の象意より、展開全体の流れで読む",
+    "high亨四分類（base.json）を適用して結論を出す",
+    "逆位は単純な反転ではなく、エネルギーの滞りまたは過剰として読む"
+  ],
+  "output_format": {
+    "sections": [
+      "【全体象】",
+      "【各カード】",
+      "【結論・断占】",
+      "【時期と行動指針】"
+    ]
+  }
+}

@@ -87,5 +87,20 @@
       { "key": "advice",    "label": "対処・心構え", "required": true,  "note": "具体的に1〜2点。命令でなく提案として" }
     ],
     "length_guide": "全体600〜1000字程度。冗長にしない。"
+  },
+
+  "fundamental_references": {
+    "description": "すべての東洋数理占術の根底をなす基本参照",
+    "shichui_algorithm": {
+      "title": "時上起時法（五子鼠法）・時柱決定アルゴリズム",
+      "file": "prompts/shichui_algorithm.json",
+      "significance": "八字（四柱推命）、紫微斗数、断易（六爻占術）など、すべての時間を基軸とする東洋占術において『時柱（じちゅう）』を正確に導出するための絶対的な基礎となるアルゴリズム。",
+      "contains": [
+        "時上起時表（完全対応マトリクス：12時間帯 × 5日干グループ）",
+        "十二支の象意辞書（五行・方位・身体部位・季節・象徴性）",
+        "実装ガイド（JavaScript/TypeScript用）"
+      ],
+      "usage": "時刻が与えられた際には、必ずこの表を参照して天干地支を確定する。占術プロンプト（meihua.json等）からここに参照を張ること。"
+    }
   }
 }
